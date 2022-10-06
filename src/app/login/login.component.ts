@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -7,51 +9,82 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  aim=`Your perfect banking partner`
-  acnt=`enter your Account number`
+  aim = "your perfect banking partner"
 
-  acno=''
-  psw=''
+  acno = ''
+  psw =''
 
 
-  userDetails:any={
-    1000:{acno:1000,username:"amal",password:123,balance:10000},
-    1001:{acno:1001,username:"anu",password:123,balance:20000},
-    1002:{acno:1002,username:"joyal",password:123,balance:15000},
-    1003:{acno:1003,username:"anaga",password:123,balance:10000}
-  }
+ 
 
-  constructor() { }
+  constructor(private router:Router,private ds:DataService) { }
 
   ngOnInit(): void {
   }
-  
-  login(){
-    var acnum=this.acno
-    var psw=this.psw
-    let userDetails=this.userDetails
-    if(acnum in userDetails){
-      if (psw==userDetails[acnum]['passsword']){
-        alert('login sucess')
-      }
-      else{
-        alert('Invalid password')
-      }
 
+  login() {
+    var acno = this.acno
+    var psw = this.psw
+
+    const result=this.ds.login(acno,psw)
+    if(result){
+      alert('Login Success')
+      this.router.navigateByUrl('dashboard')
     }
-    else{
-      alert('user not exist or incorrect ac number')
-    }
+
+
+  //   let userDetails = this.userDetails
+
+  //   if(acno in userDetails){
+  //     if(psw == userDetails[acno]['password']){
+  //       alert("login successful")
+
+  //       // redirection
+  //       this.router.navigateByUrl('dashboard')
+
+  //     }
+  //     else{
+  //       alert("incorrect password")
+  //     }
+
+  //   }
+  //   else{
+  //     alert("user dosen't exist")
+  //   }
+    
+  // }
+  // // login(a:any,b:any) {
+    
+    
+  //   var acno = a.value
+  //   var pass = b.value
+  //   let userDetails = this.userDetails
+
+  //   if(acno in userDetails){
+  //     if(pass == userDetails[acno]['password']){
+  //       alert("login successful")
+
+  //     }
+  //     else{
+  //       alert("incorrect password")
+  //     }
+
+  //   }
+  //   else{
+  //     alert("user dosen't exist")
+  //   }
+    
+  // }
+
+  // acnoChange(event: any) {
+  //   this.acno = event.target.value;
+
+  // }
+  // passChange(event:any){
+  //   this.pass= event.target.value
+    
+    
+    
   }
-
-  acnoChange(event:any){
-    this.acno=event.target.value
-    console.log(this.acno);
-    }
-    pswChange(event:any){
-      this.psw=event.target.value
-      console.log(this.psw);
-      
-    }
 
 }

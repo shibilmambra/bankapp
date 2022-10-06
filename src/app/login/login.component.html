@@ -1,20 +1,22 @@
 
-<div style="color: rgb(255, 255, 255);"><h3>{{aim}}</h3></div> 
+<div style="color: rgb(60, 124, 197);"><h3>{{aim}}</h3></div> 
 
-<div id="body1" class="container bg-primary ml-0 me-25 mr-0 mt-5 mb-5"> 
+<form id="body1" class="container bg-primary ml-0 me-25 mr-0 mt-5 mb-5"> 
     <div class="card border-light mb-3" style="max-width: rem;">
     <div class="card-header"><h5 class="text-center">Sign In</h5></div>
     <div class="card-body text-dark">
-      <form action="">
-        <i class="fa-solid fa-square-envelope"></i><input class="form-control" type="text" [placeholder]="acnt" (change)="acnoChange($event)" id="acid">   <br>
+      <form (ngSubmit)="login()" action="">
+        <i class="fa-solid fa-square-envelope"></i><input name="acno" class="form-control" type="text" placeholder="Enter Account Number"  [(ngModel)]="acno"  id="acid">  <br> 
         <!-- <div class="input-group form-group"><div class="input-group-prepend"><span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
         </div> -->
         
-        <i class="fa-solid fa-lock"></i> <input class="form-control" type="password" (change)="pswChange($event)" id="pid"> 
+        <i class="fa-solid fa-lock"></i> <input name="psw" class="form-control" type="password" placeholder="Password" [(ngModel)]="psw" > <br>
     <!-- </div>   -->
-      </form><br>
-      <button type="button" (click)="login()" >Sign In</button>
+      <br>
+      <button type="submit" (click)="login()" >Sign In</button>
+    
+   <div class=""> Don't you have an account?<a routerLink="register">Create</a></div><br>
+      </form>
     </div>
-   <div class="te"> Don't you have an account?<a href="./create.html">Create</a></div><br>
-  </div>
-  </div>
+    </div>
+

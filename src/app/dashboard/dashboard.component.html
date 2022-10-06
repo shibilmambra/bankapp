@@ -1,0 +1,55 @@
+<div class="p-5 mt-3 ms-3">
+<h1 >Welcome {{user}}!!</h1>
+</div>
+<div class="p-5 pe-5 ms-3 bg-lightx">
+<a routerLink="/transaction">View Transaction History</a>
+</div>
+
+
+<form (ngSubmit)="Deposit()">
+  <div id="body1" class="container bg-primary ml-0 me-25 mr-0 mt-5 mb-5"> 
+      <div class="card border-light mb-3" style="max-width: rem;">
+      <div class="card-header"><h5 class="text-center">Deposit</h5></div>
+      <div class="card-body text-dark">
+        <form (ngSubmit)="Deposit()" action="">
+          <i class="fa fa-user" aria-hidden="true"></i><input name="Enter Account Number" class="form-control" type="text" placeholder="Enter Account Number"  [(ngModel)]="acnum"  id="acno">   <br>
+          <!-- <div class="input-group form-group"><div class="input-group-prepend"><span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+          </div> -->
+          
+          <i class="fa fa-user-o" aria-hidden="true"></i> <input name="Enter Password" class="form-control" type="password" placeholder="Enter Password" [(ngModel)]="pswrd" id="psw"> <br>
+          <i class="fa-solid fa-lock"></i> <input name="Amount to Despoit" class="form-control" type="text" placeholder="Amount" [(ngModel)]="amnt" id="amt"> 
+  
+          <!-- </div>   -->
+        
+        <button type="submit" class="btn btn-success" >Deposit</button> <br><br>
+        </form>
+      </div>
+      </div>
+      </div>
+
+</form>
+
+
+
+    <form (ngSubmit)="Deposit()">
+      <div id="body1" class="container bg-primary ml-0 me-25 mr-0 mt-5 mb-5"> 
+          <div class="card border-light mb-3" style="max-width: rem;">
+          <div class="card-header"><h5 class="text-center">Withdraw</h5></div>
+          <div class="card-body text-dark">
+            <form (ngSubmit)="Withdraw()" action="">
+              <i class="fa fa-user" aria-hidden="true"></i><input name="Enter Account Number" class="form-control" type="text" placeholder="Enter Username"  [(ngModel)]="acnum1"  id="acno1">   <br>
+              <!-- <div class="input-group form-group"><div class="input-group-prepend"><span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+              </div> -->
+              
+              <i class="fa fa-user-o" aria-hidden="true"></i> <input name="Enter Password" class="form-control" type="password" placeholder="Enter Password" [(ngModel)]="pswrd1" id="psw1"> <br>
+              <i class="fa-solid fa-lock"></i> <input name="Amount to Withdraw" class="form-control" type="text" placeholder="Amount" [(ngModel)]="amnt1" id="amt1"> 
+      
+              <!-- </div>   -->
+            
+            <button type="submit" class="btn btn-success" >Withdraw</button>
+            </form>
+          </div>
+          </div>
+          </div>
+      
+    </form>

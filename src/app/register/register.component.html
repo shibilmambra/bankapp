@@ -1,0 +1,19 @@
+<div id="body1" class="container bg-primary ml-0 me-25 mr-0 mt-5 mb-5"> 
+    <div class="card border-light mb-3" style="max-width: rem;">
+    <div class="card-header"><h5 class="text-center">Register</h5></div>
+    <div class="card-body text-dark">
+      <form (ngSubmit)="register()" action="">
+        <i class="fa fa-user" aria-hidden="true"></i><input name="username" class="form-control" type="text" placeholder="Enter Username"  [(ngModel)]="uname"  id="uname">   <br>
+        <!-- <div class="input-group form-group"><div class="input-group-prepend"><span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+        </div> -->
+        
+        <i class="fa fa-user-o" aria-hidden="true"></i> <input name="acno" class="form-control" type="text" placeholder="Enter Account Number" [(ngModel)]="acno" id="acno"> <br>
+        <i class="fa-solid fa-lock"></i> <input name="pswd" class="form-control" type="text" placeholder="Enter Password" [(ngModel)]="pswd" id="pswd"> 
+
+        <!-- </div>   -->
+      
+      <button type="submit" (click)="register()" >Register</button>
+      </form>
+    </div>
+    </div>
+    </div>

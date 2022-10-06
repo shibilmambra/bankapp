@@ -1,0 +1,26 @@
+
+<!-- table -->
+<!-- transaction history -->
+
+
+<!-- structural directive method *ngFor -can apply directly in html to access datas from array  -->
+<!-- table headings   == transaction type->credit and debit  , amount -->
+
+
+<div>
+    <h1 class="border border w-50 container">Transaction History</h1>
+    <table class="border border w-50 container">
+        <tr>
+            <th>Transcation Type</th>
+            <th>amount</th>
+        </tr>
+        <tr  *ngFor="let i of transaction">
+            <td>{{i.type}}</td>
+            <td>{{i.amount}}</td>
+        </tr>
+        
+    </table>
+    
+    
+    <p><a routerLink="/dashboard">home page</a></p>
+</div>
